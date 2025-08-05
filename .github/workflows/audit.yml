@@ -4,6 +4,8 @@ jobs:
     audit:
         name: Security Audit
         runs-on: ubuntu-latest # execute on lastest version of ubuntu
+        env:
+            DATABASE_URL: "sqlite:///%kernel.project_dir%/var/data.db"
         steps:
             - name: Checkout
               uses: actions/checkout@v4 # up our application code
